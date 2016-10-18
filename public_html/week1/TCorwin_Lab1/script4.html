@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!--Create a form that has a text-box that will hold a string-->
+        <form>
+            <p> Some Text </p>
+        <input type="text" name="email" value="tylercorwin@email.neit.edu"/>
+        </form>
+        
+        
+        <script type="text/javascript">
+        
+        //create 2 variables and use querySelector to select each element 
+        var inputBox = document.querySelector('input[name="email"]');
+        var someText = document.querySelector('p');
+        //display the value of inputBox
+        inputBox.value;
+        console.log(inputBox.type);
+        console.log(inputBox.name);
+        console.log(inputBox.value);
+        //style the inputBox
+        inputBox.style.border = '1px dotted #999';
+        inputBox.style.borderRadius = '10px';
+        inputBox.style.textAlign = 'right';
+        inputBox.style.color = 'blue';
+        inputBox.style.fontSize = '20px';
+        inputBox.style.fontFamily = 'helvetica';
+        //style the someText
+        someText.style.color = 'red';
+        someText.style.fontSize = '15px';
+        someText.style.fontFamily = 'arial';
+        
+        </script>
+
+    </body>
+</html>

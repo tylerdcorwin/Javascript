@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Passing HTML though java
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script>
+            //declare a variable assign it a string variable with html content
+            var html = '<p> hello </p>';
+            //create a querySelector for the html tag
+            var body = document.querySelector('body');
+            //bind the html tag and send it to the page...+= adds it to current content of the 
+            //html page otherwise it would just display hello
+            body.innerHTML += html;
+            
+            
+            //html.append
+            //how to manage events
+            //how to manipulate css
+            
+            
+            
+        </script>
+        
+    </body>
+</html>

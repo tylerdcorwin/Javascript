@@ -131,24 +131,24 @@
                 //validation for content in textboxes
                 if (nameBox.value === '') {
                     lblName.classList.add('error');
-                    isValid === false;
+                    isValid = false;
                 }
                 if (emailBox.value === '') {
                     lblEmail.classList.add('error');
-                    isValid === false;
+                    isValid = false;
                 }
                 if (phoneBox.value === '') {
                     lblPhone.classList.add('error');
-                    isValid === false;
+                    isValid = false;
                 }
                 if (descriptionBox.value === '') {
                     lblDescription.classList.add('error');
-                    isValid === false;
+                    isValid = false;
                 }
                 if (radioAgree.checked === false && radioNotAgree.checked === false) {
                     lblAgree.classList.add('error');
                     lblNotAgree.classList.add('error');
-                    isValid === false;
+                    isValid = false;
                 } else {
                     lblAgree.classList.remove('error');
                     lblNotAgree.classList.remove('error');

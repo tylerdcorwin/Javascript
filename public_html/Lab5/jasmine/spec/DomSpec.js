@@ -35,7 +35,7 @@ describe("getElementContent text", function () {
     sandboxInputOnly();
 
     it('should return true if the input box value is only numeric', function () {
-        var elemContent = getElementContent('#numbers');
+        var elemContent = getNumber('#numbers');
         expect(elemContent).toBe(true);
         
         

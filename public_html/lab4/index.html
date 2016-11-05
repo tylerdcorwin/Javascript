@@ -105,7 +105,7 @@
             
             //selector for div & form
             var newDiv = document.querySelector('#info');
-            var form = document.querySelector('#mainform');
+            var mainform = document.querySelector('#mainform');
             
             //event listener for submit
             mainform.addEventListener('submit', checkForm);
@@ -132,19 +132,32 @@
                 if (nameBox.value === '') {
                     lblName.classList.add('error');
                     isValid = false;
+                } else {
+                    lblName.classList.remove('error');
                 }
+                
                 if (emailBox.value === '') {
                     lblEmail.classList.add('error');
                     isValid = false;
+                } else {
+                    lblEmail.classList.remove('error');
                 }
+                
+                
                 if (phoneBox.value === '') {
                     lblPhone.classList.add('error');
                     isValid = false;
+                } else {
+                    lblPhone.classList.remove('error');
                 }
+                
                 if (descriptionBox.value === '') {
                     lblDescription.classList.add('error');
                     isValid = false;
+                } else {
+                    lblDescription.classList.remove('error');
                 }
+                
                 if (radioAgree.checked === false && radioNotAgree.checked === false) {
                     lblAgree.classList.add('error');
                     lblNotAgree.classList.add('error');
@@ -161,11 +174,18 @@
                             '<p> Email: ' + emailBox.value + '<p>' +
                             '<p> Phone: ' + phoneBox.value + '<p>' +
                             '<p> Description: ' + descriptionBox.value + '<p>';
+                    if (radioAgree.checked === true){
+                       html += '<p> Agree:' + lblAgree.innerText  + '<p>';
+                    }
+                    if (radioNotAgree.checked === true){
+                        html += '<p> Agree:' + lblNotAgree.innerText  + '<p>';
+                    }
+                            
 
                     newDiv.innerHTML += html;
 
-                    form.classList.remove('show');
-                    form.classList.add('hide');
+                    mainform.classList.remove('show');
+                    mainform.classList.add('hide');
                 }                
             }
 

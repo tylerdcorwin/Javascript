@@ -95,7 +95,7 @@ function txtDecs(textdecoration) {
 }
 
 //inputOnly
-describe("getElementContent text", function () {
+describe("Input number only", function () {
 //validate that the entry is numbers only using isNaN()
     sandboxInputOnly();
     //1
@@ -105,7 +105,7 @@ describe("getElementContent text", function () {
     });
 });
 //numChar
-describe("getElementContent text", function () {
+describe("Input number and string", function () {
 //validate that the entry is numbers only using isNaN()
     sandboxNumChar();
     //1
@@ -114,8 +114,8 @@ describe("getElementContent text", function () {
         expect(elemContent).toBe(true);
     });
 });
-//specialChar
-describe("getElementContent text", function () {
+//specialChar   
+describe("Input special characters", function () {
 //validate that the entry is numbers only using isNaN()
     sandboxSpecialChar();
     //1
@@ -148,26 +148,13 @@ describe("text-decoration set", function () {
     });
 
     it('should not match line-through', function () {
-        var elemContent = getDecoration('div.decClass');
-        expect(elemContent).not.toEqual('line-through');
+        var elemContent = getDecoration('div.decClass');31
 
     });
 });
 
 
-
-describe("text-decoration not set", function () {
-
-    txtDecs('div');
-
-    it('should not match overline', function () {
-        var elemContent = getDecoration('div.decClass');
-        expect(elemContent).not.toEqual('overline');
-
-    });
-
-    it('should not match none', function () {
-        var elemContent = getDecoration('div.decClass');
+3r elemContent = getDecoration('div.decClass');
         expect(elemContent).not.toEqual('none');
 
     });

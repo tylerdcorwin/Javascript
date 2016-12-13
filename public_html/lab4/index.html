@@ -68,10 +68,13 @@
                 <br /><br />
                 <input type="submit" id="submitAgreement" value="Continue" />
             </div>
+
         </form>
 
         <!--My div to populate with user info-->
-        <div id="info" class ="content-box"> </div>
+        <div id="data"> 
+
+        </div>
 
 
         <script type="text/javascript">
@@ -95,34 +98,36 @@
                 }
             }
 
-
-
-            //selector for the textboxes
-            var nameBox = document.querySelector('#fullname');
-            var emailBox = document.querySelector('#email');
-            var phoneBox = document.querySelector('#phone');
-            var descriptionBox = document.querySelector('#description');
-            
             //selector for div & form
-            var newDiv = document.querySelector('#info');
-            var mainform = document.querySelector('#mainform');
-            
+            //var newDiv = document.querySelector('#info');
+            var form = document.querySelector('form');
+
             //event listener for submit
-            mainform.addEventListener('submit', checkForm);
+            form.addEventListener('submit', checkForm);
 
             function checkForm(e) {
-
+                e.preventDefault();
                 //bool validator
                 var isValid = true;
 
-                //selector for labels to turn red
-                e.preventDefault();
+                //selector for the textboxes
+                var nameBox = document.querySelector('#fullname');
+                var emailBox = document.querySelector('#email');
+                var phoneBox = document.querySelector('#phone');
+                var descriptionBox = document.querySelector('#description');
+
+                //selector for labels 
                 var lblName = document.querySelector('#content > fieldset > label:nth-child(2)');
                 var lblEmail = document.querySelector('#content > fieldset > label:nth-child(5)');
                 var lblPhone = document.querySelector('#content > fieldset > label:nth-child(8)');
                 var lblDescription = document.querySelector('#content > fieldset > label:nth-child(11)');
                 var lblAgree = document.querySelector('#section2 > label:nth-child(3)');
                 var lblNotAgree = document.querySelector('#section2 > label:nth-child(5)');
+
+                //data div
+                var dataDiv = document.querySelector('#data');
+                console.log('form submit');
+                console.log(isValid);
 
                 //radio button selectors
                 var radioAgree = document.querySelector('#agree');
@@ -135,29 +140,24 @@
                 } else {
                     lblName.classList.remove('error');
                 }
-                
                 if (emailBox.value === '') {
                     lblEmail.classList.add('error');
                     isValid = false;
                 } else {
                     lblEmail.classList.remove('error');
                 }
-                
-                
                 if (phoneBox.value === '') {
                     lblPhone.classList.add('error');
                     isValid = false;
                 } else {
                     lblPhone.classList.remove('error');
                 }
-                
                 if (descriptionBox.value === '') {
                     lblDescription.classList.add('error');
                     isValid = false;
                 } else {
                     lblDescription.classList.remove('error');
                 }
-                
                 if (radioAgree.checked === false && radioNotAgree.checked === false) {
                     lblAgree.classList.add('error');
                     lblNotAgree.classList.add('error');
@@ -170,23 +170,24 @@
                 //if all data is valid then hide form show data entered
                 if (isValid === true) {
                     var html = '';
-                    html += '<p> Name: ' + nameBox.value + '<p>' +
-                            '<p> Email: ' + emailBox.value + '<p>' +
-                            '<p> Phone: ' + phoneBox.value + '<p>' +
-                            '<p> Description: ' + descriptionBox.value + '<p>';
-                    if (radioAgree.checked === true){
-                       html += '<p> Agree:' + lblAgree.innerText  + '<p>';
-                    }
-                    if (radioNotAgree.checked === true){
-                        html += '<p> Agree:' + lblNotAgree.innerText  + '<p>';
-                    }
-                            
+                    html += '<p>Name: ' + nameBox.value + '</p>' +
+                            '<p>Email: ' + emailBox.value + '</p>' +
+                            '<p>Phone Number: ' + phoneBox.value + '</p>' +
+                            '<p>Description: ' + descriptionBox.value + '</p>';
 
-                    newDiv.innerHTML += html;
+                    if (radioAgree.checked === true) {
+                        html += '<p> Agree?: ' + radioAgree.value + '</p>';
+                    }
+                    if (radioNotAgree.checked === true) {
+                        html += '<p>' + radioNotAgree.value + '</p>';
+                    }
 
-                    mainform.classList.remove('show');
-                    mainform.classList.add('hide');
-                }                
+
+                    dataDiv.innerHTML += html;
+
+                    form.classList.remove('show');
+                    form.classList.add('hide');
+                }
             }
 
 
